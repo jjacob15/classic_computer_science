@@ -1,11 +1,14 @@
-def remove_duplicate(sorted_arr):
-    if not sorted_arr:
-        return 0
-    slow = 0
-    for fast in range(1, len(sorted_arr)):
-        if sorted_arr[fast] != sorted_arr[slow]:
-            slow += 1
-            sorted_arr[slow] = sorted_arr[fast]
+def remove_duplicate(arr):
+    if len(arr) == 1:
+        return arr
     
-    return sorted_arr[slow + 1:]
+    slow = 0
+    fast = 1
+    while fast < len(arr):
+        if arr[slow] == arr[fast]:
+            fast+=1
+        else:
+            arr[slow+1] = arr[fast]
+            slow +=1 
 
+    return arr[:slow+1]

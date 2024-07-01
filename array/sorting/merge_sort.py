@@ -19,14 +19,14 @@ def merge_sort(arr):
         k = k+1
 
     while i < len(left):
-       arr[k] = left[i]
-       i += 1
-       k += 1
+        arr[k] = left[i]
+        i += 1
+        k += 1
 
     while j < len(right):
-       arr[k] = right[j]
-       j += 1
-       k += 1
+        arr[k] = right[j]
+        j += 1
+        k += 1
 
 # complexity is O(nlogn) in the best/average and worst case. Space complexity is O(n) as it requires temp space during merge
 

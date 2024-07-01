@@ -4,11 +4,11 @@ from dataclasses import dataclass
 class CompressGene:
     def compress(self,gene:str)->int:
         self.bit_string:int = 1
-        print(f"{bin(self.bit_string)} starting\n")
+        # print(f"{bin(self.bit_string)} starting\n")
         for nucleotide in gene.upper():
-            print(f"{bin(self.bit_string)} before\n")
+            # print(f"{bin(self.bit_string)} before\n")
             self.bit_string <<= 2 # shift left two bits
-            print(f"{bin(self.bit_string)} after\n")
+            # print(f"{bin(self.bit_string)} after\n")
             if nucleotide  == 'A':
                 self.bit_string |= 0b00
             elif nucleotide == "C": # change last two bits to 01
@@ -20,13 +20,13 @@ class CompressGene:
             else:
                 raise ValueError("Invalid Nucleotide:{}".format(nucleotide))
             
-            print(f"{bin(self.bit_string)} {nucleotide}\n")
+            # print(f"{bin(self.bit_string)} {nucleotide}\n")
 
 
     def decompress(self)->str:
         gene:str = ""
         for i in range(0, self.bit_string.bit_length() -1,2):
-            print(f"{bin(self.bit_string >> i)} {bin(self.bit_string >> i & 0b11)}\n")
+            # print(f"{bin(self.bit_string >> i)} {bin(self.bit_string >> i & 0b11)}\n")
             bits: int = self.bit_string >> i & 0b11 
             if bits == 0b00 :
                 gene += "A"

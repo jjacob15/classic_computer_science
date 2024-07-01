@@ -14,9 +14,7 @@ def test_find_sum2():
 def test_remove_dups1():
     arr = [1,2,2,3,6,9,10,10,10,10,14,47,87,99]
     unique = [1,2,3,6,9,10,14,47,87,99]
-    remove_duplicate(arr)
-    print(arr)
-    assert arr == unique
+    assert remove_duplicate(arr) == unique
 
 
     
