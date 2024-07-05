@@ -11,4 +11,18 @@ def can_sum(target, arr, memo={}):
 
     memo[target] = False
     return False
+
+
+def can_sum_tab(target,arr):
+    dp = [False for _ in range(target+1)]
+    dp[0] = True
+
+    for i in range(target):
+        if dp[i]:
+            for num in arr:
+                if i + num  <= target:
+                    dp[i+num] = True
+
+    return dp[target]
+
     

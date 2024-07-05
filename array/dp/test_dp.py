@@ -1,6 +1,6 @@
 from kadane import max_subarray_sum
-from can_sum import can_sum
-from how_sum import how_sum
+from can_sum import can_sum,can_sum_tab
+from how_sum import how_sum,how_sum_tab
 from best_sum import best_sum
 from can_construct import can_construct
 from climbing_stairs import climbing_stairs,climbing_stairs_count,climbing_stairs_tabluation
@@ -13,11 +13,19 @@ def test_max_subarray_sum():
 
 
 def test_can_sum():
-    assert can_sum(7, [5, 3, 4, 7]) == True
+    assert can_sum(7, [5, 3, 4]) == True
 
 
 def test_can_sum1():
     assert can_sum(300, [14, 7]) == False
+
+
+def test_can_sum_tab():
+    assert can_sum_tab(7, [5, 3, 4]) == True
+
+
+def test_can_sum1_tab():
+    assert can_sum_tab(300, [14, 7]) == False
 
 
 def test_how_sum():
@@ -34,6 +42,21 @@ def test_how_sum2():
 
 def test_how_sum3():
     assert how_sum(300, [7, 14]) == None
+
+# def test_how_sum_tab():
+#     assert how_sum_tab(7, [2, 4]) == None
+
+
+# def test_how_sum_tab1():
+#     assert how_sum_tab(7, [3, 4]) == [4, 3]
+# 1
+
+def test_how_sum_tab2():
+    assert how_sum_tab(8, [2, 3, 5]) == [2, 2, 2, 2]
+
+
+# def test_how_sum_tab3():
+#     assert how_sum_tab(300, [7, 14]) == None
 
 
 def test_best_sum():

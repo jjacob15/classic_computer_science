@@ -15,3 +15,18 @@ def how_sum(target, arr, memo=None):
     
     memo[target] = None
     return memo[target]
+
+
+def how_sum_tab(target,nums):
+    dp = [None for _ in range(target+1)]
+    dp[0] =[]
+    
+    for i in range(target):
+        if dp[i] is not None:
+            for num in nums:
+                if dp[i+num] is None: dp[i+num] = []
+                if i+num <= target:
+                    dp[i+num].append(num)
+
+    print(dp)
+    return dp[target]
