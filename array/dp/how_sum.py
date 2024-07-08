@@ -24,9 +24,25 @@ def how_sum_tab(target,nums):
     for i in range(target):
         if dp[i] is not None:
             for num in nums:
-                if dp[i+num] is None: dp[i+num] = []
                 if i+num <= target:
-                    dp[i+num].append(num)
+                    copy = [*dp[i]]
+                    copy.append(num)
+                    dp[i+num] = copy
 
-    print(dp)
+    return dp[target]
+
+def how_sum_tab_all(target,nums):
+    dp = [None for _ in range(target+1)]
+    dp[0] =[[]]
+    
+    for i in range(target):
+        if dp[i] is not None:
+            for num in nums:
+                if i+num <= target:
+                    for arr in dp[i]:
+                        copy = [*arr]
+                        copy.append(num)
+                        if dp[i+num] is None: dp[i+num] = []
+                        dp[i+num].append(copy)  
+
     return dp[target]
