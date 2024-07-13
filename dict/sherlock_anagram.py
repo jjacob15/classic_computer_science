@@ -1,19 +1,16 @@
 from collections import defaultdict
 def sherlock(s):
-    anagrams = {}
+    anagrams = defaultdict(int)
     n = len(s)
 
     cur_size = 1
     while cur_size <= n-1:
         for i in range(n):
             val = "".join(sorted(s[i:i+cur_size]))
-            if val not in anagrams:
-                anagrams[val] = 0
             for j in range(i+1, n):
                 substr =s[j:j+cur_size]
                 if len(substr) != cur_size: continue 
                 ordered = "".join(sorted(s[j:j+cur_size]))
-                # print(val,ordered,anagrams)
                 if val == ordered:
                     anagrams[ordered]+=1
         cur_size +=1
