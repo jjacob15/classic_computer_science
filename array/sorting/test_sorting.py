@@ -5,9 +5,12 @@ from merge_sort import merge_sort
 from merge_sort import bottom_up_merge_sort
 from quick_sort import quick_sort
 from bribe import bribe
-
+from fraud_activity import fraud
 
 sorted = [1, 2, 4, 4, 4, 5, 7, 12, 22, 23, 32, 332]
+
+def test_fraud_activity():
+    assert fraud([2, 3, 4, 2, 3, 6, 8, 4, 5],5) == 2
 
 def test_bribe():
     assert bribe([2,1,5,3,4]) == 3
