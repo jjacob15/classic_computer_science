@@ -21,7 +21,7 @@ def minimumSwaps(arr):
             visited[key] = True if needVal + 1 == needKey else False
             cycle_size += 1
         
-        print(key,cycle_size)
+        # print(key,cycle_size)
         if cycle_size > 1:
             swap += (cycle_size - 1)
     return swap 

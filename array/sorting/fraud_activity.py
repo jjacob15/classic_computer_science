@@ -31,20 +31,16 @@ def fraud(expenditure,d):
     notification =0
     low,high = [],[]
 
-    print(d)
     for num in expenditure[:d]:
         add(num, low, high)
 
     for i in range(d,len(expenditure)):
         median = get_median(low,high,d)
-        print(median, low, high)    
         if expenditure[i] >=2 *median:
             notification+=1
         
         remove(expenditure[i-d],low,high)
         add(expenditure[i], low, high)
-
-        print(low,high)            
 
     return notification
 

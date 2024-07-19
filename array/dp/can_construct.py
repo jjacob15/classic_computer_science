@@ -44,5 +44,5 @@ def can_construct_tab(target,wordbank):
                                 dp[len(word)+char_idx] = []
                             dp[len(word)+char_idx].append(copy_of)
 
-    print(dp)
+    # print(dp)
     return dp[len(target)]

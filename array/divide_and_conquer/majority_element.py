@@ -15,9 +15,9 @@ def majority_element(nums):
 
         # Otherwise, count each element and return the winner
         left_count = sum(1 for i in range(lo, hi + 1) if nums[i] == left)
-        print("left count",left_count,left)
+        # print("left count",left_count,left)
         right_count = sum(1 for i in range(lo, hi + 1) if nums[i] == right)
-        print("right count", right_count, right)
+        # print("right count", right_count, right)
 
         return left if left_count > right_count else right
 
