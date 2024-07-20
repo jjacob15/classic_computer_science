@@ -29,20 +29,50 @@ def can_construct(target:str,wordbank:List[str],memo=None):
     return result
 
 def can_construct_tab(target,wordbank):
-    dp = [None for _ in range(len(target)+1)]
-    dp[0] = [[]]
+    dp =[None for _ in range(len(target)+1)]
+    dp[0]=[[]]
 
     for char_idx in range(len(target)):
         for word in wordbank:
             if word[0] == target[char_idx]:
+                print(word,char_idx)
                 if dp[char_idx] is not None:
-                    for arr in dp[char_idx]:
-                        copy_of = [*arr]
+                    for item in dp[char_idx]:
+                        copy_of = [*item]
                         copy_of.append(word)
                         if len(dp) > len(word)+char_idx:
                             if dp[len(word)+char_idx] is None:
                                 dp[len(word)+char_idx] = []
                             dp[len(word)+char_idx].append(copy_of)
-
-    # print(dp)
     return dp[len(target)]
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def can_construct_tab(target,wordbank):
+#     dp = [None for _ in range(len(target)+1)]
+#     dp[0] = [[]]
+
+#     for char_idx in range(len(target)):
+#         for word in wordbank:
+#             if word[0] == target[char_idx]:
+#                 if dp[char_idx] is not None:
+#                     for arr in dp[char_idx]:
+#                         copy_of = [*arr]
+#                         copy_of.append(word)
+#                         if len(dp) > len(word)+char_idx:
+#                             if dp[len(word)+char_idx] is None:
+#                                 dp[len(word)+char_idx] = []
+#                             dp[len(word)+char_idx].append(copy_of)
+
+#     # print(dp)
+#     return dp[len(target)]

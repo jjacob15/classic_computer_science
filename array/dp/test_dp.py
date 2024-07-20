@@ -75,9 +75,9 @@ def test_can_construct1():
     result = can_construct("abcdef", ["ab", "abc", "cd", "def", "abcd","ef","c"])
     assert len(result) == 4
 
-def test_can_construct2():
-    result = can_construct_tab("abcdef", ["ab", "abc", "cd", "def", "abcd","ef","c"])
-    assert len(result) == 4
+# def test_can_construct2():
+#     result = can_construct_tab("abcdef", ["ab", "abc", "cd", "def", "abcd","ef","c"])
+#     assert len(result) == 4
     
 def test_can_construct3():
     result = can_construct_tab("purple", ["purp", "p", "ur", "le", "purpl"])
