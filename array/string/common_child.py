@@ -16,4 +16,5 @@ def common_child(s1,s2):
               dp[i][j] = dp[i-1][j-1] + 1
           else:
               dp[i][j] = max(dp[i-1][j], dp[i][j-1]) #or take max of i-1 or j-1
+  print(dp)
   return dp[n][m]
