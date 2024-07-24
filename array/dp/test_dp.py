@@ -6,6 +6,28 @@ from can_construct import can_construct,can_construct_tab
 from climbing_stairs import climbing_stairs,climbing_stairs_count,climbing_stairs_tabluation
 from fib import fib;
 from grid_traveler import grid_traveler
+from min_cost import min_cost
+from knap_sack import knapsack
+
+def test_knap_sack():
+    values = [60, 100, 120]
+    weights = [4, 3, 2]
+    W = 15
+    assert knapsack(values,weights,W) == 280    
+
+
+def test_min_cost():
+    grid = [[0 for i in range(3)] for j in range(3)]
+    grid[0][0] = 4
+    grid[0][1] = 9
+    grid[0][2] = 7
+    grid[1][0] = 3
+    grid[1][1] = 8
+    grid[1][2] = 5
+    grid[2][0] = 1
+    grid[2][1] = 2
+    grid[2][2] = 6
+    assert min_cost(grid) == 16
 
 def test_max_subarray_sum():
     nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]

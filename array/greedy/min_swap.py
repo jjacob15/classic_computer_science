@@ -45,7 +45,7 @@ def minimumSwapsOld(arr):
             map[key] = (needVal,True if needVal + 1 == needKey else False)
             cycle_size += 1
         
-        print(key,cycle_size)
+        # print(key,cycle_size)
         if cycle_size > 1:
             swap += (cycle_size - 1)
     return swap 
@@ -54,8 +54,10 @@ def minimumSwaps1(arr):
     n = len(arr)
     # Create a list of tuples where each tuple is (element, index)
     arrpos = [(arr[i], i) for i in range(n)]
+    print(arrpos)
     # Sort the array by the element values
     arrpos.sort()
+    print(arrpos)
     # Initialize a visited array to keep track of visited elements
     visited = [False] * n
     swaps = 0

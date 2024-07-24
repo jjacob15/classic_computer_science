@@ -29,7 +29,6 @@ def can_construct(target:str,wordbank:List[str],memo=None):
     return result
 
 def can_construct_tab(target,wordbank):
-    print(wordbank)
     dp =[None for _ in range(len(target)+1)]
     dp[0]=[[]]
 
@@ -44,7 +43,7 @@ def can_construct_tab(target,wordbank):
                             if dp[len(word)+char_idx] is None:
                                 dp[len(word)+char_idx] = []
                             dp[len(word)+char_idx].append(copy_of)
-                            print(char_idx,dp)
+                            # print(char_idx,dp)
     return dp[len(target)]
 
 

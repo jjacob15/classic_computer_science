@@ -19,7 +19,7 @@ def can_sum_tab(target,arr):
     dp[0] = True #keep base case as True
     dp1[0] = (0,True) #keep base case as True
 
-    print(target,arr)
+    # print(target,arr)
     #the idea is the iterate through each number until you reach the target
     #at each position
     for i in range(target):
