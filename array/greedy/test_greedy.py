@@ -7,6 +7,10 @@ def test_luck_balance():
     contests = [[5,1],[2 ,1],[1,1],[8,1],[10,0],[5,0]]
     assert luckBalance(k,contests) == 29
 
+    k = 5
+    contests = [[13,1],[10 ,1],[9,1],[8,1],[13,1],[12,1],[18,1],[13,1]]
+    assert luckBalance(k,contests) == 42
+
 def test_min_sor():
     arr =[7,1,3,2,4,5,6]
     assert minimumSwaps1(arr) == 5

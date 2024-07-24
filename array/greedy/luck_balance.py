@@ -9,18 +9,13 @@ def luckBalance(k, contests):
         return sum([item[0] for item in tup])
             
     tup.sort(key=lambda x: x[0])
-    print(tup)
-    win_count = 0
     luck =0
+    win_count = 0
+    to_win = important_count - k
     for item in tup:
-        if item[0] < 0 and item[1] ==1 and k > win_count:
+        if win_count < to_win and item[1] == 1:
             win_count +=1
             luck -= item[0] 
-        elif k == 0:
-            win_count +=1
-            luck -= item[0]
         else:
             luck += item[0]
-            
-    print(win_count,luck)
     return luck

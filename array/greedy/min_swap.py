@@ -54,10 +54,8 @@ def minimumSwaps1(arr):
     n = len(arr)
     # Create a list of tuples where each tuple is (element, index)
     arrpos = [(arr[i], i) for i in range(n)]
-    print(arrpos)
     # Sort the array by the element values
     arrpos.sort()
-    print(arrpos)
     # Initialize a visited array to keep track of visited elements
     visited = [False] * n
     swaps = 0
