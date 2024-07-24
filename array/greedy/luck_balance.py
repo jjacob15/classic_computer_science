@@ -5,8 +5,6 @@ def luckBalance(k, contests):
         tup.append((c[0],c[1]))
         if c[1] ==1:
             important_count +=1
-    if k ==0:
-        return sum([item[0] for item in tup])
             
     tup.sort(key=lambda x: x[0])
     luck =0
