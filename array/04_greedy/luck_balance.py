@@ -1,3 +1,8 @@
+#the goal was to only win whats necessary so you don't lose your luck
+# balance. So created a tuple array and got the imp count
+# sorted by asc luck value so you can reduce only the ones with
+# with the least luck value.
+
 def luckBalance(k, contests):
     tup = []
     important_count = 0

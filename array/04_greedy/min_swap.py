@@ -50,6 +50,10 @@ def minimumSwapsOld(arr):
             swap += (cycle_size - 1)
     return swap 
 
+
+#the goal is to find the min swaps to order the list.
+
+
 def minimumSwaps1(arr):
     n = len(arr)
     # Create a list of tuples where each tuple is (element, index)

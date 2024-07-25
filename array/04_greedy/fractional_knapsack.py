@@ -1,3 +1,9 @@
+#the idea is to use all the values once based on their weights
+#and fit to the max capacity.
+#to find the best values by weight, you find its ratio v/w
+# order by desc.
+# iterating through the ratios, you get each item by their ratio and reduce capacity
+
 def fractional_knapsack(values, weights, capacity):
     # Calculate value to weight ratio
     ratio = [(v / w, w) for v, w in zip(values, weights)]
