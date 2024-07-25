@@ -15,18 +15,8 @@ def minimumBribes(q):
                     bribeMap[q[i-1]] = 0
                 bribeMap[q[i-1]] +=1
                 if bribeMap[q[i-1]] > 2:
-                    print("Too chaotic")
-                    return
+                    return "Too chaotic"
                 q[i-1],q[i] = q[i],q[i-1]
                 bribe+=1
         
-    print(bribe)
-
-
-
-
-# print(minimumBribes([2,1,5,3,4]))
-# print(minimumBribes([2,5,1,3,4]))
-# print(minimumBribes([2,5,1,3,4]))
-# print(minimumBribes([5, 1, 2, 3, 7, 8, 6, 4]))
-print(minimumBribes([1, 2, 5, 3, 4, 7, 8, 6]))
+    return bribe

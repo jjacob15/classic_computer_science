@@ -1,3 +1,7 @@
+#in a sorted array, remove duplicates
+# have a slow and fast pointer.
+# slow,fast = 0,1
+# if slow == fast then move fast forward else, swap slow +1 with fast and increment slow, the sorted array with be from slow+1
 def remove_duplicate(arr):
     if len(arr) == 1:
         return arr

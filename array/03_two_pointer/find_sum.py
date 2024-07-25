@@ -1,3 +1,4 @@
+# two pointer technique with a sorted array. left and right and the the left + right > target reduce right or else increase left
 def find_sum(arr,target):
     left = 0
     right = len(arr) -1 

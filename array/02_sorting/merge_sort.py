@@ -1,3 +1,21 @@
+# Base condition:  as long as len of arr > 1
+# Break it into left and right and recurse until len or array > 1
+# Soring happens in place, so you don’t need a new array.
+# One while loop for i< len(left) and j < len(right), find which is greeted and merge
+# Two while loops to add the remaining left and right into the array.
+
+# Time Complexity: consistent O(n log n) time complexity. 
+# Space Complexity: O(n), since it only requires temp arrays during merge.
+
+# Bottom-up merge sort
+# Let's illustrate the bottom-up merge sort with an example array [38, 27, 43, 3, 9, 82, 10]:
+# Initial array as subarrays:
+# [38],[27],[43],[3],[9],[82],[10]
+# Merge Iteratively:
+# Merge adjacent pairs: [27,38], [3,43], [9,82],[10]
+# Merge adjacent pairs: [3,27,38,43],[9,10,82]
+# Merge the last two remaining subarrays: [3,9,10,27,38,43,82]
+# Sorted array: 3,9,10,27,38,43,82
 
 def merge_sort_count(arr):
     global merge_count
