@@ -1,57 +1,65 @@
-def minimumSwaps(arr):
-    pos = {arr[i]:i for i in range(len(arr))}
-    visited = {arr[i]: True if i+1 == arr[i]else False for i in range(len(arr))}
-    swap = 0
+# def minimumSwaps(arr):
+#     pos = {arr[i]:i for i in range(len(arr))}
+#     visited = {arr[i]: True if i+1 == arr[i]else False for i in range(len(arr))}
+#     swap = 0
 
-    for i in range(len(arr)):
-        key = arr[i]
-        if visited[key]: 
-            continue
-        cycle_size = 0
-        while True:
-            keyIdx = pos[key]
-            if visited[key]:
-                break
-            needKey = keyIdx+1
-            needVal = pos[needKey]
-            pos[needKey] = keyIdx
-            visited[needKey] = True
+#     for i in range(len(arr)):
+#         key = arr[i]
+#         if visited[key]: 
+#             continue
+#         cycle_size = 0
+#         while True:
+#             keyIdx = pos[key]
+#             if visited[key]:
+#                 break
+#             needKey = keyIdx+1
+#             needVal = pos[needKey]
+#             pos[needKey] = keyIdx
+#             visited[needKey] = True
 
-            pos[key] = needVal
-            visited[key] = True if needVal + 1 == needKey else False
-            cycle_size += 1
+#             pos[key] = needVal
+#             visited[key] = True if needVal + 1 == needKey else False
+#             cycle_size += 1
         
-        # print(key,cycle_size)
-        if cycle_size > 1:
-            swap += (cycle_size - 1)
-    return swap 
+#         # print(key,cycle_size)
+#         if cycle_size > 1:
+#             swap += (cycle_size - 1)
+#     return swap 
 
-def minimumSwapsOld(arr):
-    map = {arr[i]: (i, True if i+1 == arr[i]else False) for i in range(len(arr))}
-    swap = 0
+# def minimumSwapsOld(arr):
+#     map = {arr[i]: (i, True if i+1 == arr[i]else False) for i in range(len(arr))}
+#     swap = 0
 
-    for i in range(len(arr)):
-        key = arr[i]
-        _,keyVisited = map[key]
-        if keyVisited: 
-            continue
-        cycle_size = 0
-        while True:
-            keyIdx,keyVisited = map[key]
-            if keyVisited: break
-            needKey = keyIdx+1
-            needVal,_ = map[needKey]
-            map[needKey] = (keyIdx, True)
-            map[key] = (needVal,True if needVal + 1 == needKey else False)
-            cycle_size += 1
+#     for i in range(len(arr)):
+#         key = arr[i]
+#         _,keyVisited = map[key]
+#         if keyVisited: 
+#             continue
+#         cycle_size = 0
+#         while True:
+#             keyIdx,keyVisited = map[key]
+#             if keyVisited: break
+#             needKey = keyIdx+1
+#             needVal,_ = map[needKey]
+#             map[needKey] = (keyIdx, True)
+#             map[key] = (needVal,True if needVal + 1 == needKey else False)
+#             cycle_size += 1
         
-        # print(key,cycle_size)
-        if cycle_size > 1:
-            swap += (cycle_size - 1)
-    return swap 
+#         # print(key,cycle_size)
+#         if cycle_size > 1:
+#             swap += (cycle_size - 1)
+#     return swap 
 
 
 #the goal is to find the min swaps to order the list.
+# create a array of tuples with the value and index
+# sort it based on the values. It will give you the values and their index.
+# create a visited array of boolean false
+# for each index, if its visited or if the tuple[1] == i contine
+# j = i
+# else cycle with a while until you visited[j] == true and increase cycle count
+# REMEMBER THE SWAP IS TOTAL CYCLES FOR THAT I -1
+
 
 
 def minimumSwaps1(arr):

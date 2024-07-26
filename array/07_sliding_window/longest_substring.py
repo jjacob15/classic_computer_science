@@ -1,5 +1,5 @@
 def longest_unique_substring(s):
-    char_map = {} # use the map to keep the posting of char
+    char_map = {} # use the map to keep the postion of char
     left = 0
     max_size = 0
     for right in range(len(s)):
