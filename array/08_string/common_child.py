@@ -1,4 +1,7 @@
-from collections import defaultdict
+# finding a common child is by using a 2D array of len + 1
+# start from 1 and if the last two characters match increment size by one
+# else take max of up or left positions
+
 def common_child(s1,s2):
   #     A B C D
   #   0 0 0 0 0

@@ -1,3 +1,8 @@
+# the dictionary holds the position of the character
+# if the char doesn't exist set the char and postion to dict
+# compute max size and max of max size and right - left + 1
+# else change left as max of left or char pos +1
+
 def longest_unique_substring(s):
     char_map = {} # use the map to keep the postion of char
     left = 0

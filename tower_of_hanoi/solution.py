@@ -1,3 +1,7 @@
+#the gist of tower of hanoi is knowing the you need to move n-1 disks from begin to temp using end as temp
+# then move 1 from begin to end using temp as temp
+# then move n-1 from temp to end using begin as temp
+
 from Stack import Stack
 num_discs: int = 3
 

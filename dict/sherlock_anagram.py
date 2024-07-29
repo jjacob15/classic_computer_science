@@ -1,3 +1,5 @@
+#ANOTHER INSIGHT FOR ANAGRAMS, YOU CAN SORT THE TEXT TO SEE IF TWO STRINGS ARE ANAGRAMS.
+
 from collections import defaultdict
 def sherlock(s):
     anagrams = defaultdict(int)

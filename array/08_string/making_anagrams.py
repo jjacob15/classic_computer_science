@@ -1,3 +1,4 @@
+# #populate all chars of a, iterate b and either remove if exists in a or add to another var for b. Sum it up
 from collections import defaultdict
 
 def make_anagram(a,b):

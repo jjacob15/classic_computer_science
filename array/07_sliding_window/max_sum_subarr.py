@@ -7,6 +7,3 @@ def max_sum_subarr(arr,size):
         curr = curr + arr[i] - arr[i - size]
         max_sum = max(max_sum,curr)
     return max_sum
-
-
-
