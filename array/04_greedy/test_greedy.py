@@ -3,6 +3,16 @@ from min_swap import minimumSwaps1
 from luck_balance import luckBalance
 from greedy_flourist import greedy_flourist
 from min_max import min_max
+from reverse_shuffle_merge import reverse_shuffle_merge
+
+def test_reverse_shuffle_merge():
+    assert reverse_shuffle_merge("dcabcdba") == "abcd"
+    assert reverse_shuffle_merge("egggge") == "egg"
+    assert reverse_shuffle_merge("eggegg") == "egg"
+    assert reverse_shuffle_merge("abcdefgabcdefg") == "agfedcb"
+    assert reverse_shuffle_merge("fgababcdecdefg") == "cedabgf"
+    assert reverse_shuffle_merge("aeiouuoiea") == "aeiou"
+    assert reverse_shuffle_merge("bdabaceadaedaaaeaecdeadababdbeaeeacacaba") == "aaaaaabaaceededecbdb"
 
 
 def test_min_max():
