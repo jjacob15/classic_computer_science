@@ -5,6 +5,9 @@
 
 # Time Complexity: O(log⁡n) for worst-case, best-case, and average-case scenarios.
 # Space Complexity: O(1) for the iterative version and O(log⁡n) for the recursive version.
+# INSIGHT -> can not only be used to find the an item in a sorted array, you could use it to find
+# the count of elements less than or greater than the target. Change the condition to arr[mid] <=item 
+# and the position of l will give you that
 
 def binary_search(arr, item):
     low, high = 0, len(arr)-1

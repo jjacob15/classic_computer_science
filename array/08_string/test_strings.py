@@ -1,6 +1,6 @@
 from making_anagrams import make_anagram
 from sherlock_validate import sherlock
-from special_string import special_str_count
+from special_string import special_str_again
 from common_child import common_child
 
 def test_common_child():
@@ -12,16 +12,16 @@ def test_common_child():
 
 def test_special_str():
     s = "mnonopoo"
-    assert special_str_count(len(s),s) == 12
+    assert special_str_again(len(s),s) == 12
 
     s = "abcbaba"
-    assert special_str_count(len(s),s) == 10
+    assert special_str_again(len(s),s) == 10
 
     s = "aaaa"
-    assert special_str_count(len(s),s) == 10
+    assert special_str_again(len(s),s) == 10
 
     s = "aabaa"
-    assert special_str_count(len(s),s) == 9
+    assert special_str_again(len(s),s) == 9
 
 
 def test_make_anagrams():
