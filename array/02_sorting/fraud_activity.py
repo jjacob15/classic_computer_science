@@ -1,3 +1,30 @@
+# If the amount spent by a client on a particular day is greater than or equal to  the client's median
+#  spending for a trailing number of days, they send the client a notification about potential fraud.
+#  The bank doesn't send the client any notifications until they have at least that trailing number of 
+# prior days' transaction data.
+
+# INSIGHT -> efficient ways to get median of a set of values.
+# INSIGHT -> If values are within a known range,such as [0...200] use the counting sort technique.
+    # You create an array with that range, and then for each position the element exists, you add one. If you are iterating through a window, add the last 
+    # value and decrement the front value. So for an array of [3,2,3,2,5] -> iterate and create [0,0,2,2,0,1] 
+    # which equates to 2 "2"s and 2 "3"s and 1 "5"
+    # to get a median out of this array, first check the len of the input array [3,2,3,2,5] is even
+    # for even cases you want the (median pos + median pos +1) /2
+    # for odd cases just median pos value.
+    # median pos = len//2 +1
+
+#   ELSE use a min max heapq.
+    # two arrays, low and high. Where the high queue is adding value normally so when you pop, you get the least value. 
+    # The low queue, adds value with inverted sign to pop the highest value.
+    # to add if the num is less than or equal to the - low[0](because values are negative here) the heappush into here
+    # else push to high array and BALANCE.
+    # balance takes both the high and low and if len(low) > len(high) +1
+    # pushpop from low and insert into high else the other way around.
+    # median is for even -low[0] +high[0] /2 else -low[0]
+
+
+
+
 import heapq
 def fraud(expenditure,d):
     def add(num,low,high):
@@ -43,14 +70,6 @@ def fraud(expenditure,d):
         add(expenditure[i], low, high)
 
     return notification
-
-
-
-
-
-
-
-
 
 
 

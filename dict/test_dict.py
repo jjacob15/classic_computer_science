@@ -1,7 +1,8 @@
 from sherlock_anagram import sherlock
 from counting_triplets import counting_triplets
 from freq_query import freqQuery
-def test_sherlock():
+
+def test_sherlock1():
     assert sherlock("abba") == 4
     assert sherlock("abcd") == 0
     assert sherlock("ifailuhkqq") == 3
