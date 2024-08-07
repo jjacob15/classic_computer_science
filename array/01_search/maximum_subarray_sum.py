@@ -1,5 +1,17 @@
-# INSIGHT -> you cummulatively add prefixes and you traverse the array. Add them to an array
-# when you find the next prefix, check if there is a prefix greater than this in the array, if so, 
+# OBJECTIVE -> [1,2,3] and a modulo 7. Determine the maximum value of the sum of any of its subarrays modulo m. 
+# 		        sum	%2
+# [1]		    1	1
+# [2]		    2	0
+# [3]		    3	1
+# [1,2]		    3	1
+# [2,3]		    5	1
+# [1,2,3]		6	0
+
+# INSIGHT -> you cummulatively add prefixes as you traverse the array. Add them to an array. REMEMBER MODULO IS CYCLIC. 
+# Keep the prefixes in a sorted array. TO DO THIS, YOU USE A BINARY SEARCH TO FIND THE PREFIX >= TO ONE IN THE SORTED 
+# ARRAY. USE THAT VALUE TO COMPUTE MAX AS BELOW AND INSERT IT BACK INTO THAT BINARY TREE INDEX.
+# TO FIND MAX MODULE, TAKE PREFIX - PREFIX GREATER THAN THIS + 7 (TO MAKE IT POSITIVE) AND TRY
+
 # prefix - the greater prefix + m (to avoid negative modulo) % m. This will give you the max modulo for the array combination
 
 def maximumSum(array, m):

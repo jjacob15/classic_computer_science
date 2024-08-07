@@ -1,4 +1,5 @@
-# given an array of cost, find two 1 based index that adds to money [2,1,3,5,6] and 5. print(1,3). You can also have mutiple costs of the same value.
+# given an array of cost, find two 1 based index that adds to money [2,1,3,5,6] and 5. print(1,3). 
+# You can also have mutiple costs of the same value.
 # naive 0(n2) will not work
 # Use a cost map for all single values
 # Use a double cost map for all mutiple values. This will make it O(n)
