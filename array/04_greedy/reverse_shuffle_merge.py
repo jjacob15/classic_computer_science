@@ -1,9 +1,12 @@
 from collections import Counter
 
-#The idea here is you could have a string abcd that has been reversed and shuffled and then merged. You need to find the lexically smallest string.
-#As it is reversed, you are going to look backwards.
-#We keep a final frequency map that lists of the characters of A. Which is half of the count from the string.
-#we then iterate until we have a solution with the len of (s)//2
+# merge(reverse(A),suffle(A)) -> Find A
+# INSIGHT -> there reverse should be there somewhere so start from tail to the head.
+ 
+# The idea here is you could have a string abcd that has been reversed and shuffled and then merged. You need to find the lexically smallest string.
+# As it is reversed, you are going to look backwards.
+# We keep a final frequency map that lists of the characters of A. Which is half of the count from the string.
+# we then iterate until we have a solution with the len of (s)//2
 # the plan is going backwards and keeping a track of the min character. 
 # as we go back we reduce the left_freq and break when the left freq of that char is less that the string freq. THIS INDICATES THE BREAK FROM THE A TO THE SECOND A
 # We take the min, add it to the solution, and repeat from where that min value was picked.
@@ -36,7 +39,6 @@ def reverse_shuffle_merge(s):
         s = s[:next_char[min_char]]
 
 
-    print("".join(solution))
     return "".join(solution)
 
 
