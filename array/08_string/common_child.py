@@ -1,3 +1,7 @@
+#A string is said to be a child of a another string if it can be formed by deleting 0 or more characters
+#  from the other string. Letters cannot be rearranged. Given two strings of equal length, what's the
+#  longest string that can be constructed such that it is a child of both?
+
 # finding a common child is by using a 2D array of len + 1
 # start from 1 and if the last two characters match increment size by one
 # else take max of up or left positions
@@ -9,6 +13,8 @@ def common_child(s1,s2):
   # B 0 1 1 2 2
   # D 0 1 1 2 3
   # C 0 1 1 2 3
+ 
+#   answer is ABC or ABD with max len of 3.
 
   n, m = len(s1), len(s2)
   dp = [[0] * (m+1) for _ in range(n+1)]

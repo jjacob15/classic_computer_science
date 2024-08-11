@@ -1,4 +1,5 @@
-# Builds the final sorted array one item at a time, inserting each new item into its proper place among the already-sorted items.
+# Builds the final sorted array one item at a time, inserting each new item into its proper 
+# place among the already-sorted items.
 
 # Example
 # Let's sort the array [5, 3, 8, 4, 2] using insertion sort:

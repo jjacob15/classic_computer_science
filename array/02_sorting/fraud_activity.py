@@ -17,7 +17,8 @@
     # two arrays, low and high. Where the high queue is adding value normally so when you pop, you get the least value. 
     # The low queue, adds value with inverted sign to pop the highest value.
     # to add if the num is less than or equal to the - low[0](because values are negative here) the heappush into here
-    # else push to high array and BALANCE.
+    # else push to high array and BALANCE.[2, 3, 4, 2, 3, 6, 8, 4, 5],5) == 2
+
     # balance takes both the high and low and if len(low) > len(high) +1
     # pushpop from low and insert into high else the other way around.
     # median is for even -low[0] +high[0] /2 else -low[0]
