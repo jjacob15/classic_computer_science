@@ -16,17 +16,52 @@
 # 6 x 5 = 30 + 30 
 
 # it takes 4 passes
+# INSIGHTS -> Ceiling Division. Use ceiling division to find the how many resources are needed to meet a 
+# target. Instead of 10/3 = 3.333 math.ceil(10/3) = 4. This will take care of the partial effort and make more sense.
+# INSIGHTS -> instead of incrementally working to the target, always use division to find the remainder. Here 
+# when  production < cost, we find the difference then do remainder /(machine * workers) to find the remaining rounds.
+# This greatly enhances performance
 
-def computeCandiesOnPass(m,w,p,target, passCount):
+import math
+def canProduceCandiesInRounds(machines,workers,price,target, rounds):
+    if machines >= math.ceil(target/workers):
+        return True
     
-    candiesMade =0
-    while candiesMade < target:
-        candiesMade += m * w
-        if candiesMade >= target //2:
-            continue
-        candiesMadeHalf = candiesMade // 2
-        if m < w:
-            m+= candiesMadeHalf
-            candiesMade -= candiesMadeHalf
+    production = machines * workers
+    rounds -= 1
+    if rounds == 0:
+        return False
+    
+    while True:
+        remainder = target - production
+        rounds_to_remainder = math.ceil(remainder/(machines*workers))
+        if rounds_to_remainder <= rounds:
+            return True
         
-            
+        if production < price:
+            remainder = price - production
+            rounds_to_remainder = math.ceil(remainder/(machines*workers))
+            rounds  -= rounds_to_remainder
+            if rounds < 1:
+                return False
+            production += rounds_to_remainder * machines * workers
+        
+        production -= price
+
+        if machines > workers:
+            workers+=1
+        else:
+            machines+=1
+    
+    return False
+
+def minimumPasses(machines, workers, cost, target):
+    # Write your code here
+    l, r = 1,10**12
+    while l < r:
+        mid = (l+r)//2
+        if canProduceCandiesInRounds(machines,workers,cost,target,mid):
+            r = mid
+        else:
+            l = mid +1
+    return l

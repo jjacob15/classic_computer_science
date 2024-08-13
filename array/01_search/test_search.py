@@ -1,6 +1,14 @@
 from binary_search import binary_search
 from min_time_required import min_time_required
 from maximum_subarray_sum import maximumSum
+from making_candies import minimumPasses
+
+def test_compute_candies_on_pass():
+    assert minimumPasses(1,2,1,60) == 4
+    # assert minimumPasses(3,1,2,12) == 3
+    # assert minimumPasses(1,1,1_000_000_000_000,1_000_000_000_000) == 1_000_000_000_000
+    # assert minimumPasses(1,10,1_00,10) == 1
+    # assert minimumPasses(1,100,10_000_000_000,1_000_000_000_000) == 617737754
 
 def test_maximum_sum():
     # assert maximumSum([1,2,3],2) == 1
