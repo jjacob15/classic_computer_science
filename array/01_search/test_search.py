@@ -2,6 +2,18 @@ from binary_search import binary_search
 from min_time_required import min_time_required
 from maximum_subarray_sum import maximumSum
 from making_candies import minimumPasses
+from swap_nodes import swap_nodes
+
+def test_swap_nodes():
+    # result =  swap_nodes([[2, 3], [-1, -1], [-1, -1]],[1, 1])
+    # assert result[0] == [3,1,2]
+    # assert result[1] == [2,1,3]
+
+    result =  swap_nodes([[2, 3], [4, -1], [5, -1],[6, -1],[7, 8],[-1, 9],[-1, -1],[10, 11],[-1, -1],[-1, -1],[-1, -1]],[2,4])
+    assert result[0] == [2,9,6,4,1,3,7,5,11,8,10]
+    assert result[1] == [2,6,9,4,1,3,7,5,10,8,11]
+
+
 
 def test_compute_candies_on_pass():
     assert minimumPasses(1,2,1,60) == 4
