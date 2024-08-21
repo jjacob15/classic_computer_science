@@ -8,6 +8,30 @@ from fib import fib;
 from grid_traveler import grid_traveler
 from min_cost import min_cost
 from knap_sack import knapsack
+from max_array_sum import max_arr_sum
+from abbreviation import abb
+
+
+def test_abb():
+    assert abb("AbcDE","ABDE") == "YES"
+    assert abb("AbcDE","AFDE") == "NO"
+    assert abb("AbCdE","AFE") == "NO"
+    assert abb("beFgH","EFG") == "NO"
+    assert abb("beFgH","EFH") == "YES"
+    assert abb("Pi","P") == "YES"
+    assert abb("AfPZN","APZNC") == "NO"
+    assert abb("LDJAN","LJJM") == "NO"
+    assert abb("UMKFW","UMKFW") == "YES"
+    assert abb("sYOCa","YOCN") == "NO"
+    
+
+
+
+def test_max_arr_sum():
+    assert max_arr_sum([-2,1,3,-4,5]) == 8
+    assert max_arr_sum([3,7,4,6,5]) == 13
+    assert max_arr_sum([2,1,5,8,4]) == 11
+    assert max_arr_sum([3, 5, -7, 8, 10]) == 15
 
 def test_knap_sack():
     values = [60, 100, 120]

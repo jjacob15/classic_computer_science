@@ -4,6 +4,12 @@ from luck_balance import luckBalance
 from greedy_flourist import greedy_flourist
 from min_max import min_max
 from reverse_shuffle_merge import reverse_shuffle_merge
+from candies import candies
+
+def test_candies():
+    # assert candies([4,6,4,5,6,2]) == 10
+    # assert candies([1,2,2]) == 4
+    assert candies([2,4,2,6,1,7,8,9,2,1]) == 19
 
 def test_reverse_shuffle_merge():
     assert reverse_shuffle_merge("dcabcdba") == "abcd"

@@ -41,9 +41,6 @@ class Node:
         
 
 def swap_nodes(indexes,queries):
-    print(indexes)
-    print(queries)
-
     root = Node(1)
     root.level = 1
     queue = [root]

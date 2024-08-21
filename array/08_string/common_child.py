@@ -10,9 +10,9 @@ def common_child(s1,s2):
   #     A B C D
   #   0 0 0 0 0
   # A 0 1 1 1 1
-  # B 0 1 1 2 2
-  # D 0 1 1 2 3
-  # C 0 1 1 2 3
+  # B 0 1 2 2 2
+  # D 0 1 2 2 3
+  # C 0 1 3 2 3
  
 #   answer is ABC or ABD with max len of 3.
 
@@ -25,5 +25,6 @@ def common_child(s1,s2):
               dp[i][j] = dp[i-1][j-1] + 1
           else:
               dp[i][j] = max(dp[i-1][j], dp[i][j-1]) #or take max of i-1 or j-1
-#   print(dp)
+  # for arr in dp:
+  #   print(arr)
   return dp[n][m]
