@@ -16,6 +16,6 @@ def largest_rectange(h):
 
     while stack:
         index,height = stack.pop()
-        max_area = max(max_area,(len(h)-index)*height)
+        max_area = max(max_area,(len(h)-index)*height) # this is the tail end of the historgram, so you use the len(h) - the index for width
 
     return max_area

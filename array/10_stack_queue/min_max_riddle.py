@@ -5,8 +5,6 @@ def min_max_riddle(arr):
     left = [-1] * n
     right = [n] * n
 
-    print(left,right,arr)
-    
     # Stack to store indexes of array elements
     stack = []
     
@@ -30,20 +28,20 @@ def min_max_riddle(arr):
         stack.append(i)
     # Initialize result array
     result = [0] * (n + 1)
-    print(left,right)
+    # print(left,right)
     
     # Fill result array
     for i in range(n):
         length = right[i] - left[i] - 1
         result[length] = max(result[length], arr[i])
 
-    print(result)
+    # print(result)
     
     
     # Fill the remaining entries in the result array
     for i in range(n-1, 0, -1):
         result[i] = max(result[i], result[i+1])
     
-    print(result)
+    # print(result)
     # Output the result excluding the zero-th index
     return result[1:]
