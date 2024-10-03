@@ -24,3 +24,18 @@ def swap_nodes(indexes,queries):
         if right != -1:
             node.right = Node(right)
             queue.append(node.right)
+
+
+def inorder_swap(node,level,result):
+    if node.level % level ==0:
+        node.left, node.right = node.right, node.left
+    
+    if node.left != None:
+        node.left.level = node.level+1
+        inorder_swap(node.left)
+    
+    result.append(int(str(node)))
+
+    if node.right != None:
+        node.right.level = node.level+1
+        inorder_swap(node.right)

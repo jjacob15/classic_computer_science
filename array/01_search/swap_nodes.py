@@ -27,6 +27,9 @@
 #         -> [1],[(2,3)],[(4,5),(6,7)] THEN ADD ONE TO QUEUE, POP IT AND ADD 2 AND THREE AS LEFT AND RIGHT BUT ADD THEM INTO THE QUEUE. ETC...
 #INSIGHTS -> in order traversal in DF depth first. You recursively go until you reach the end of the left node, then print it and do the right
 
+# for the swap, each query that you get you need to swap all the multiples of the level. For swap 2,  you would swap 
+# level 2 and 4. for level 4, you would swap 4 and 8
+
 
 
 class Node:
@@ -84,3 +87,4 @@ def inorder_swap(node,level,result):
         inorder_swap(node.right,level,result)
 
     
+
