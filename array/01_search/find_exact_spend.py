@@ -4,9 +4,6 @@
 # Use a cost map for all single values
 # Use a double cost map for all mutiple values. This will make it O(n)
 
-
-
-
 from collections import defaultdict
 def whatFlavors(cost, money):
     # Write your code here
