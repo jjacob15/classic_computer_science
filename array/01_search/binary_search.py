@@ -9,6 +9,17 @@
 # the count of elements less than or greater than the target. Change the condition to arr[mid] <=item 
 # and the position of l will give you that
 
+# INSIGHT -> when you are finding the count of items lesser than or greater than in the arr, the bound and the l and r position changes.
+# Make sure the upper bound is len(arr) as you might want to include the last value as well.
+# for finding the item lesser than the target, make sure the r = mid. DON'T subtract here. 
+# for finding the item greater than the target, make sure the l = mid. DON'T add here. 
+
+# INSIGHT -> when using binary search looking for bounds.
+# the upper bound of high or r can be len(arr) - 1 or len(arr) depending on what you are trying to acheive. WHEN YOU ARE SEARCHING 
+# FOR A SPECFIC VALUE/ELEMENT EXISTS USING LEN(ARR) -1 
+# WHEN YOU ARE FIND THE INTERSECTION POINT, UPPER OR LOWER BOUND, NUMBER OF ITEMS LOWER THAN, YOU USE LEN(ARR). Its because the value might be 
+# beyond the upper bound of the array.
+
 def binary_search(arr, item):
     low, high = 0, len(arr)-1
 
