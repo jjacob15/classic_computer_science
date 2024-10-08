@@ -9,7 +9,6 @@ def triplets(a, b, c):
     c = sorted(set(c))
 
     def find_less_than_arr(arr, target):
-        print(arr,target)
         l, r = 0, len(arr)
         while l < r:
             mid = (l+r)//2
@@ -17,17 +16,13 @@ def triplets(a, b, c):
                 l = mid + 1
             else:
                 r = mid
-        print(l, r, mid,target)
         return l
 
     total = 0
     
     for b_item in b:
         less_than_a = find_less_than_arr(a, b_item)
-        print("------", less_than_a)
         less_than_c = find_less_than_arr(c, b_item)
-        print("------", less_than_c)
-        print(b_item, less_than_a, less_than_c)
 
         total += less_than_a * less_than_c
 

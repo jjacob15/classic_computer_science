@@ -5,8 +5,8 @@
 
 # INSIGHT -> efficient ways to get median of a set of values.
 # INSIGHT -> If values are within a known range,such as [0...200] use the counting sort technique.
-    # You create an array with that range, and then for each position the element exists, you add one. If you are iterating through a window, add the last 
-    # value and decrement the front value. So for an array of [3,2,3,2,5] -> iterate and create [0,0,2,2,0,1] 
+    # You create an array with that range, and then for each position the element exists, you add one. If you are iterating through a window, 
+    # add the last value and decrement the front value. So for an array of [3,2,3,2,5] -> iterate and create [0,0,2,2,0,1] 
     # which equates to 2 "2"s and 2 "3"s and 1 "5"
     # to get a median out of this array, first check the len of the input array [3,2,3,2,5] is even
     # for even cases you want the (median pos + median pos +1) /2
