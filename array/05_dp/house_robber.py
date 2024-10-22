@@ -1,6 +1,6 @@
 # You need to maximize the profit. You can only rob non adjacent homes as it would trigger the alarm.
-#INSIGHT -> when you define the base cases, don't worry about any conditions. Those conditions if you take 
-# the last value or not are decided later during tabulation.  
+#INSIGHT -> when you define the base cases, don't worry about any conditions. If you use or disuse values from your tabulations
+# depends on the state i of the iteration.
 def house_robber(nums):
     dp  = [0] *(len(nums))
 

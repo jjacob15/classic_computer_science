@@ -39,11 +39,16 @@ def climbing_stairs_count(n,memo=None):
 
     return choices
 
+#INSIGHT -> for 1 stair there is only one way to get there. for two there are two ways to get there. Now counting back, its fib
 def climbing_stairs_tabluation(n):
-    dp = [0]*(n+2)
+    dp = [0]*n
     dp[0] = 1
-    dp[1] = 1
-    for i in range(2,n+1):
+    dp[1] = 2
+
+    for i in range(2,n):
         dp[i] = dp[i-1] + dp[i - 2]
 
-    return dp[n]
+    return dp[-1]
+
+print(climbing_stairs_tabluation(2))
+print(climbing_stairs_tabluation(3))
