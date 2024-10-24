@@ -1,6 +1,11 @@
 # You need to maximize the profit. You can only rob non adjacent homes as it would trigger the alarm.
 #INSIGHT -> when you define the base cases, don't worry about any conditions. If you use or disuse values from your tabulations
 # depends on the state i of the iteration.
+
+#INSIGHT -> Two signs of a DP 
+# First sign -> it asks for min/max or how many ways are there, or what is the longest possible, is it possible to reach a point.
+# Second sign -> that is common in DP problems is that future "decisions" depend on earlier decisions.
+
 def house_robber(nums):
     dp  = [0] *(len(nums))
 
