@@ -6,20 +6,20 @@
 # A common subsequence of two strings is a subsequence that is common to both strings.
 #INSIGHT -> for subsequeuce, if no match, top or left value, else diagonal value.
 #     a c e
-#   0 0 0 0
-# a 0 1 1 1
-# b 0 0 0 0
-# c 0 0 0 0
-# d 0 0 0 0
-# e 0 0 0 0
+#   1 0 0 0
+# a 1 1 0 0
+# b 1 0 0 0
+# c 1 0 0 0
+# d 1 0 0 0
+# e 1 0 0 0
 
 #     a b
 #   1 0 0
-# a 0 1 0
-# b 0 1 1
-# c 0 0 1
-# d 0 0 1
-# e 0 0 1
+# a 1 1 0
+# b 1 1 1
+# c 1 0 0
+# d 1 0 0
+# e 1 0 0
 
  
 def longestCommonSubsequence(text1,text2):
@@ -30,7 +30,7 @@ def longestCommonSubsequence(text1,text2):
             # print(text1[i-1],text2[j-1])
             if text1[i-1] == text2[j-1]:
                 # means take the LCS for the last i-1 and j-1 string size
-                dp[i][j] = min(dp[i-1][j-1], 1)
+                dp[i][j] = min(dp[i-1][j-1], 1) #
     print(max([row[-1] for row in dp]))
     return max([row[-1] for row in dp])
 

@@ -24,7 +24,7 @@ def longestCommonSubsequence(text1,text2):
             if text1[i-1] == text2[j-1]:
                 dp[i][j] = dp[i-1][j-1] + 1 #means take the LCS for the last i-1 and j-1 string size
             else:
-                dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1]) #means take the maximum of either of the text1 or text2.
     print(dp)
     print(dp[-1][-1])
     return dp[-1][-1]
