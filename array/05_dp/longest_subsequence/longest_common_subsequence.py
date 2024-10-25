@@ -4,7 +4,7 @@
 
 # For example, "ace" is a subsequence of "abcde".
 # A common subsequence of two strings is a subsequence that is common to both strings.
-#INSIGHT -> for subsequeuce, if no match, top or left value, else diagonal value.
+#INSIGHT -> for subsequeuce, if no match, top or left value, else diagonal value. Diagonal value indicates the last characters matched.
 #     a c e
 #   0 0 0 0
 # a 0 1 1 1
