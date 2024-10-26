@@ -1,4 +1,5 @@
-# Alice has n balloons arranged on a rope. You are given a 0-indexed string colors where colors[i] is the color of the ith balloon.
+# Alice has n balloons arranged on a rope. You are given a 0-indexed string colors where colors[i] is the color
+#  of the ith balloon.
 
 # Alice wants the rope to be colorful. She does not want two consecutive balloons to be of the same color, so she asks Bob for help. Bob can remove some balloons from the rope to make it colorful. You are given a 0-indexed integer array neededTime where neededTime[i] is the time (in seconds) that Bob needs to remove the ith balloon from the rope.
 
@@ -13,7 +14,9 @@
 # INSIGHT -> the neededTime[i] is updated dynamically to store the maximum time for the current "block" of same-colored balloons. This is an efficient way to track decisions and ensures that you don’t need additional space or a complex data structure to manage the solution.
 
 # bbbb [5,4,8,1]
-# becomes
+# becomesIf each DP state represents a choice for each element position in nums, then the DP array typically has a length equal to nums (e.g., len(nums)).
+# If each DP state represents a decision based on the values themselves (like earning points based on the value of i), then the DP array is usually based on the maximum number in nums (max(nums) + 1).
+
 # bbbb [ 5, 5, 8, 8]
 # instead of worrying about pointers when you take 4 instead of 5, just replace 4 with 5 and you will have sorted the problem of tracking what you used.
 
