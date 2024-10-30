@@ -24,16 +24,19 @@ def longestCommonSubsequence(text1,text2):
             if text1[i-1] == text2[j-1]:
                 dp[i][j] = dp[i-1][j-1] + 1 #means take the LCS for the last i-1 and j-1 string size
             else:
-                dp[i][j] = max(dp[i-1][j], dp[i][j-1]) #means take the maximum of either of the text1 or text2.
-    print(dp)
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1]) #means get the max of text1 or text2, giving the possiblity to exlude a character from 
+                #text1 or text2. dp[i-1][j] means excluding character from text1.
+    for row in dp:
+        print(row)
     print(dp[-1][-1])
     return dp[-1][-1]
 
-longestCommonSubsequence("abcde","ace") #3
-longestCommonSubsequence("abc","abc") #3
-longestCommonSubsequence("abc","def") #0
-longestCommonSubsequence("bl","yby") #1
-longestCommonSubsequence("abcba","abcbcba") #5
-longestCommonSubsequence("bsb","b") #1
-longestCommonSubsequence("b","bsb") #1
-longestCommonSubsequence("bsbininm","jmjkbkjkv") #1
+longestCommonSubsequence("abcde","afe") #2
+# longestCommonSubsequence("abcde","ace") #3
+# longestCommonSubsequence("abc","abc") #3
+# longestCommonSubsequence("abc","def") #0
+# longestCommonSubsequence("bl","yby") #1
+# longestCommonSubsequence("abcba","abcbcba") #5
+# longestCommonSubsequence("bsb","b") #1
+# longestCommonSubsequence("b","bsb") #1
+# longestCommonSubsequence("bsbininm","jmjkbkjkv") #1
