@@ -25,6 +25,7 @@ def quick_sort_helper(arr, low, high):
 
 
 def partition(arr, low, high):
+    print(low,high)
     pivot = arr[high]
     i = low - 1  # Initialize index of smaller element
     for j in range(low, high):

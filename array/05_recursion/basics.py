@@ -51,7 +51,26 @@ def is_palindrome(str):
         return internal(i+1,str,n)  #INSIGHT think of internal(i+1,str,n) becoming True when it reaches the base case. so return True.
     return internal(0,str,len(str))
 
-result = is_palindrome("repaper")
-print(result)
-result = is_palindrome("repaper1")
-print(result)
+# result = is_palindrome("repaper")
+# print(result)
+# result = is_palindrome("repaper1")
+# print(result)
+
+def findSubsequence(arr):
+    result = []
+
+    def backtrack(index,current):
+        if index == len(arr):
+            result.append(list(current))
+            return
+
+        current.append(arr[index])
+        backtrack(index+1,current)
+        current.pop()
+        backtrack(index+1,current)
+
+    backtrack(0,[])
+    return result
+
+
+print(findSubsequence([3,1,2]))
