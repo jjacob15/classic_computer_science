@@ -24,6 +24,7 @@ def combintationSum(arr,target):
     result = []
     
     def backtrack(remaining,idx,combination):
+        print("trying",combination)
         if remaining == 0:
             result.append(list(combination))
             return 
@@ -33,8 +34,10 @@ def combintationSum(arr,target):
         
         combination.append(arr[idx])
         backtrack(remaining - arr[idx],idx,combination) 
+        print("Backtrack",idx+1)
         combination.remove(arr[idx])
-        backtrack(remaining,idx+1,combination)
+        backtrack(remaining,idx+1,combination) #even though we increased the index, we are not using the second value here,
+        # we evaluate [2,2,2] first then start with adding that next idx value
 
     backtrack(target,0,[])
 
