@@ -20,24 +20,43 @@
 #INSIGHT -> unlike subsequence, if you draw the decision tree, as we can use one number any number of times, you don't use the idx to check the levels of the tree,
 # but use remaining to check if its under zero to break. we also check if the idx hit the end of the arr to stop.
 
+# def combintationSum(arr,target):
+#     result = []
+    
+#     def backtrack(remaining,idx,combination):
+#         if remaining == 0:
+#             result.append(list(combination))
+#             return 
+        
+#         if idx ==len(arr) or remaining < 0:
+#             return
+        
+#         combination.append(arr[idx])
+#         backtrack(remaining - arr[idx],idx,combination) 
+#         combination.remove(arr[idx])
+#         backtrack(remaining,idx+1,combination) #even though we increased the index, we are not using the second value here,
+#         # we evaluate [2,2,2] first then start with adding that next idx value
+
+#     backtrack(target,0,[])
+
+
+#     print(result)
+        
 def combintationSum(arr,target):
     result = []
     
-    def backtrack(remaining,idx,combination):
-        print("trying",combination)
+    def backtrack(remaining,start,combination):
         if remaining == 0:
-            result.append(list(combination))
+            result.append(combination[:])
             return 
         
-        if idx ==len(arr) or remaining < 0:
+        if remaining < 0:
             return
         
-        combination.append(arr[idx])
-        backtrack(remaining - arr[idx],idx,combination) 
-        print("Backtrack",idx+1)
-        combination.remove(arr[idx])
-        backtrack(remaining,idx+1,combination) #even though we increased the index, we are not using the second value here,
-        # we evaluate [2,2,2] first then start with adding that next idx value
+        for i in range(start,len(arr)):
+            combination.append(arr[i])
+            backtrack(remaining - arr[i],i,combination) 
+            combination.pop()
 
     backtrack(target,0,[])
 

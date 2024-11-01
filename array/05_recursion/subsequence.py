@@ -24,6 +24,8 @@ def subsequences(i,arr,n,take,result=[]):
 
 subsequences(0,[3,1,2],3,"start")
 
+
+
 def sum_subsequences(i,arr,n,result=[]):
     if i >=n:
         if sum(result) == 2:
@@ -66,4 +68,4 @@ def count_sum_subsequences(i,arr,n,result=[]):
     return l + r
 
 c = count_sum_subsequences(0,[1,1,2],3)
-print(c)
+# print(c)
