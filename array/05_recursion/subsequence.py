@@ -8,9 +8,12 @@
 # 3,2
 # 3,1,2 -> note order. It cannot be 321
 
+#INSIGHT-> when you draw the decision tree you will recognize that you need the index to know when you are at the bottom so the base 
+# case is when i >= n break
+
+
 
 def subsequences(i,arr,n,take,result=[]):
-    print("calling", i, result,take)
     if i >=n:
         print(result)
         return 
@@ -19,7 +22,7 @@ def subsequences(i,arr,n,take,result=[]):
     result.pop()
     subsequences(i+1,arr,n,"not take",result)
 
-# subsequences(0,[3,1,2],3,"start")
+subsequences(0,[3,1,2],3,"start")
 
 def sum_subsequences(i,arr,n,result=[]):
     if i >=n:
