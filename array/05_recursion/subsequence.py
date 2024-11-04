@@ -14,6 +14,8 @@
 
 
 def subsequences(i,arr,n,take,result=[]):
+    # with any subsequence, you want to go down the full depth of the decision tree before you take the next element
+    # therefore the base case is checking the lenght of the arr
     if i >=n:
         print(result)
         return 

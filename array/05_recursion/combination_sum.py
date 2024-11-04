@@ -16,32 +16,13 @@
 
 
 #INSIGHT-> this is DFS using  backtracking. when you hit the leaf, you backtrack, exlude the last item and then DO NOT CHANGE THE REMAINING. This is
-# to check the right node. 
+# to check the right node. This gives you a combination
 #INSIGHT -> unlike subsequence, if you draw the decision tree, as we can use one number any number of times, you don't use the idx to check the levels of the tree,
 # but use remaining to check if its under zero to break. we also check if the idx hit the end of the arr to stop.
+# here the base case is if remaining is zero and as you can use the element any number of times, you don't increment the backtrack recursive call.
+# 0(2^t*n) where t is the target. for 10 and element 1, you would go about it 10 times.
 
-# def combintationSum(arr,target):
-#     result = []
-    
-#     def backtrack(remaining,idx,combination):
-#         if remaining == 0:
-#             result.append(list(combination))
-#             return 
-        
-#         if idx ==len(arr) or remaining < 0:
-#             return
-        
-#         combination.append(arr[idx])
-#         backtrack(remaining - arr[idx],idx,combination) 
-#         combination.remove(arr[idx])
-#         backtrack(remaining,idx+1,combination) #even though we increased the index, we are not using the second value here,
-#         # we evaluate [2,2,2] first then start with adding that next idx value
-
-#     backtrack(target,0,[])
-
-
-#     print(result)
-        
+#INSIGHT -> this is a combination problem. you try every combination, unlike a subsequence.
 def combintationSum(arr,target):
     result = []
     

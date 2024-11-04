@@ -1,7 +1,7 @@
 # Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.
 # Each number in candidates may only be used once in the combination.
 # Note: The solution set must not contain duplicate combinations.
-
+# 0(2^n*n)
 def combintationSum2(arr,target):
     result = []
     arr.sort() #sorting so we can exclude adjacent like values.
@@ -53,5 +53,6 @@ def combintationSum2(arr,target):
         
 
 
-ans= combintationSum2([2,5,2,1,2],5)
+ans= combintationSum2([2,5,1,4,3],10)
+# ans= combintationSum2([2,5,2,1,2],5)
 # print(ans)

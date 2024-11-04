@@ -55,7 +55,9 @@ def is_palindrome(str):
 # print(result)
 # result = is_palindrome("repaper1")
 # print(result)
+#0(2^n*n) because for each element there are 2 choices. The final n is the result.append and copy
 
+#INSIGHT -> this is a subsequence. only one directional 
 def findSubsequence(arr):
     result = []
 
