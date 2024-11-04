@@ -15,7 +15,7 @@ def combintationSum2(arr,target):
             return
         
         for i in range(start, len(arr)):
-            if i > start and arr[i-1]==arr[i]:
+            if i > start and arr[i-1]==arr[i]: # checking if the next element and the previous one as same.
                 continue
             combination.append(arr[i])
             backtrack(i+1, remaining - arr[i],combination) 
