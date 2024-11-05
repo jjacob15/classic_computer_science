@@ -1,7 +1,7 @@
 # Permutations
 # Given an array nums of distinct integers, return all the possible 
 # permutations. You can return the answer in any order.
-
+#INSIGHT-> when you are doing permutations, don't use an index, you need all of it.
 
 # Example 1:
 
@@ -15,19 +15,19 @@
 def permute(arr):
     result = []
 
+
     def backtrack(combinations):
         if len(combinations) == len(arr):
             result.append(combinations[:])
-            return 
-
-        for num in arr:
-            if num not in combinations:
-                combinations.append(num)
-                backtrack(combinations)
-                combinations.pop()
+            return
+        
+        for val in arr:
+            if val in combinations: continue
+            combinations.append(val)
+            backtrack(combinations)
+            combinations.pop()
 
     backtrack([])
-
-    return result
+    print(result)
 
 permute([1,2,3])    
