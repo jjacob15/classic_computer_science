@@ -11,6 +11,7 @@
 # It does not matter what you leave beyond the returned k (hence they are underscores).
 
 #Here index only copies if the occurance is under 2 else it ignores
+from collections import Counter
 def remove_duplicate(nums):
     index = 1
     occurance =1
