@@ -10,23 +10,22 @@
 # Explanation: Your function should return k = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
 
-#Here index only copies if the occurance is under 2 else it ignores
+#Here the write index is the slow and i is fast. You compare write -2 with current and if so update write index.
 from collections import Counter
 def remove_duplicate(nums):
-    index = 1
-    occurance =1
+    # Special case for arrays with fewer than 3 elements
+    if len(nums) <= 2:
+        return len(nums)
+    
+    writeIndex = 2  # Start writing from the third position
 
-    for i in range(1, len(nums)):
-        if nums[i]== nums[i-1]:
-            occurance+=1
-        else:
-            occurance = 1
-        
-        if occurance <=2:
-            nums[index] = nums[i]
-            index+=1
-    print(nums,index)
-
+    for i in range(2, len(nums)):
+        # Check if the current element is different from the one two positions behind
+        if nums[i] != nums[writeIndex - 2]:
+            nums[writeIndex] = nums[i]
+            writeIndex += 1
+    
+    return writeIndex
 
 remove_duplicate([0, 0,1,1,1,1,2,3,3])
 remove_duplicate([1,1,1,2,2,3])

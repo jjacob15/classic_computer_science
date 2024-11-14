@@ -20,7 +20,6 @@ def remove_duplicate(arr):
     fast = 1
     for fast in range(1,len(arr)):
         if arr[slow] != arr[fast]:
-            print(arr)
             slow+=1
             arr[slow] = arr[fast]
     print(arr)
