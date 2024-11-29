@@ -20,9 +20,12 @@ def remove_duplicate(arr):
     fast = 1
     for fast in range(1,len(arr)):
         if arr[slow] != arr[fast]:
-            slow+=1
-            arr[slow] = arr[fast]
+            slow +=1
+            arr[slow]= arr[fast]
+
     print(arr)
+
+
 
 remove_duplicate([0,0,1,1,2,2,3,4,5,5])
 
@@ -37,16 +40,12 @@ remove_duplicate([0,0,1,1,2,2,3,4,5,5])
 
 
 
-    # if len(arr) == 1:
-    #     return arr
-    
+
+
     # slow = 0
     # fast = 1
-    # while fast < len(arr):
-    #     if arr[slow] == arr[fast]:
-    #         fast+=1
-    #     else:
-    #         arr[slow+1] = arr[fast]
-    #         slow +=1 
-
-    # return arr[:slow+1]
+    # for fast in range(1,len(arr)):
+    #     if arr[slow] != arr[fast]:
+    #         slow+=1
+    #         arr[slow] = arr[fast]
+    # print(arr)
