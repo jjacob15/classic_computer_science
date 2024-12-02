@@ -1,4 +1,4 @@
-from kadane import max_subarray_sum
+from array_string.kadane_max_subarray import max_subarray_sum
 from can_sum import can_sum,can_sum_tab
 from how_sum import how_sum,how_sum_tab,how_sum_tab_all
 from best_sum import best_sum

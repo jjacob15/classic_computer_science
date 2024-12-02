@@ -15,6 +15,7 @@ def left_rotate_arr(arr):
     reverse(arr,0,len(arr)-2)
 
 #INSIGHT -> k times, you find remainder of the number of times with the len. to restrict the times to len of arr
+#Moudulus for anything within a bound
 def rotate_arr_k(arr,k):
     steps = k%len(arr)
     def reverse(arr,start,end):

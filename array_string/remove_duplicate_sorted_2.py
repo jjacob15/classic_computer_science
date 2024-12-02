@@ -14,7 +14,7 @@
 # Have a write index j and a scan index i
 # Start with writing index and scanning index the same. You check for occurance count and increment if they are the same or reset to 1
 # count <=2 decides to write to the writing index, if the count is less than 2. else ignore.
-
+#INSIGHT -> the idea is you go and write the value to the write index from the scan index, based on a condition..
 
 def remove_duplicate(nums):
     print(nums)
