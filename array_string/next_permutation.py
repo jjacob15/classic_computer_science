@@ -13,10 +13,10 @@
 #INSIGHT => if you are using a for and if for something, use a while.
 
 # -> 4325431
-# 43(2)5431  first decreasing element/
+# 43(2)5431  first decreasing element from the right
 # 43(2)54(3)1 find next largest element from tail. the first hit.
 # 43(3)54(2)1 swap
-# 433(1245)reverse
+# 433(1245)reverse not sort 
 
 def nextPermutation(nums):
     n = len(nums)
@@ -25,20 +25,20 @@ def nextPermutation(nums):
     while i > 0 and nums[i] < nums[i-1]:
         i-=1
     i = i - 1
-    print("pos i",i,nums[i])
+    # print("pos i",i,nums[i])
 
     # Step 2: Find the next larger element
     if i >=0:
         j = n -1
         while nums[j] <= nums[i]:
-            print("j",j)
+            # print("j",j)
             j -=1
-        print("swap b",nums,j,nums[j])
+        # print("swap b",nums,j,nums[j])
         nums[i],nums[j] = nums[j], nums[i]# Swap elements
-        print("swap a",nums)
+        # print("swap a",nums)
     # Step 3: Reverse the elements to the right of i
     nums[i+1:] = reversed(nums[i+1:])
-    print("reverse",nums)
+    # print("reverse",nums)
 
     print(nums)
 
