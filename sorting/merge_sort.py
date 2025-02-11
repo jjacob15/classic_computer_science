@@ -17,6 +17,40 @@
 # Merge the last two remaining subarrays: [3,9,10,27,38,43,82]
 # Sorted array: 3,9,10,27,38,43,82
 
+def m_s_t(arr):
+    n = len(arr)
+    if n > 1:
+        mid = n//2
+        left = arr[:mid]
+        right = arr[mid:]
+        m_s_t(left)
+        m_s_t(right)
+
+        i = j = k = 0
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                arr[k] = left[i]
+                k+=1
+                i+=1
+            else:
+                arr[k] = right[j]
+                k+=1
+                j+=1
+        while i < len(left):
+            arr[k] = left[i]
+            k+=1
+            i+=1
+        while j < len(right):
+            arr[k] = right[j]
+            k+=1
+            j+=1
+
+
+    print(arr)
+
+
+m_s_t([38, 27, 43, 3, 9, 82, 10])
+
 def merge_sort_count(arr):
     global merge_count
     merge_count =0

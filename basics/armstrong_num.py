@@ -2,13 +2,52 @@
 # 153 == 1^3 + 5^3 + 3^3
 import math
 def armstrong(n):
-    length = len(str(n))
+    l = len(str(n))
+    result = 0
     c = n
-    result =0
-    while c > 0:
-        tail = c %10
-        result += math.pow(tail,length)
-        c = c//10
-    print(result == n)
+    while n > 0:
+        tail = n%10
+        result += math.pow(tail,l)
+        n = n//10
+    
+    print(result == c)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # length = len(str(n))
+    # c = n
+    # result =0
+    # while c > 0:
+    #     tail = c %10
+    #     result += math.pow(tail,length)
+    #     c = c//10
+    # print(result == n)
 armstrong(153)
 armstrong(371)

@@ -8,4 +8,4 @@ def count_digit(num):
     print(length + 1)
     return length + 1
 
-count_digit(0)
+count_digit(111)
